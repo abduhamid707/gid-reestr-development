@@ -85,7 +85,7 @@
                             </div>
                             <div v-else @click="$router.push({name:'volunteers_id', query:{id:el?.data_token}})" class="tbody" v-for="el,index in table?.rows" :key="index">
                                 <div class="td">{{offset+index+1}}</div>
-                                <div class="td"><img :src="'http://test.gidlar.uz/api/cdn/'+el?.guide_photo" alt=""><p>{{el?.first_name}} {{el?.last_name}} {{el?.middle_name}}</p></div>
+                                <div class="td"><img :src="'https://culturevolunteers.uz/api/cdn/'+el?.member_photo" alt=""><p>{{el?.first_name}} {{el?.last_name}} {{el?.middle_name}}</p></div>
                                 <div class="td">{{el?.badges?.[0]?.reg_num}}</div>
                                 <div class="td"><span v-for="item,idx in el?.languages" :key="idx">{{langs[item-1]?.name?.[$i18n.locale]}}, </span></div>
                                 <div class="td"><span v-if="el?.category==0">{{no_category?.name[$i18n.locale]}}</span><span v-else-if="el?.category==1 || el?.category==2">{{el?.category}}-{{num_category?.name[$i18n.locale]}}</span><span v-else-if="el?.category==10">{{best_category?.name[$i18n.locale]}}</span></div>

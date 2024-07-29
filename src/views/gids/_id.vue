@@ -6,16 +6,16 @@
                     <img src="@/assets/images/image6.png" alt="">
                 </div>
                 <div v-if="loading" class="gids-breadbrumbs">
-                    <router-link :to="'/'+this.$i18n.locale+'/guides'">{{$t('listguide')}}</router-link>
+                    <router-link :to="'/'+this.$i18n.locale+'/volunteers'">{{$t('listguide')}}</router-link>
                     <span><Icons icon="arrowRight" color="#7B8189" size="sm"/></span>
-                    <router-link :to="'/'+this.$i18n.locale+'/guides/single?id='+$route.query.id">{{guide?.first_name}} {{guide?.last_name}} {{guide?.middle_name}}</router-link>
+                    <router-link :to="'/'+this.$i18n.locale+'/volunteers/single?id='+$route.query.id">{{guide?.first_name}} {{guide?.last_name}} {{guide?.middle_name}}</router-link>
                 </div>
                 <div class="gids-sg-block">
                     <h3 v-if="loading">{{guide?.first_name}} {{guide?.sur_name}} {{guide?.middle_name}}</h3>
                     <h3 v-else>{{$t('downloading')}}...</h3>
                     <div v-if="loading" class="gids-sg-uinfos">
                         <div class="gids-sg-upinfos">
-                            <img class="gids-avatar" :src="'http://test.gidlar.uz/api/cdn/'+guide?.guide_photo" alt="">
+                            <img class="gids-avatar" :src="'https://culturevolunteers.uz/api/cdn/'+guide?.member_photo" alt="">
                             <div v-if="mobile && qrcode" class="qrcode">
                                 <img :src="qrcode" alt="">
                             </div>
@@ -293,7 +293,7 @@ export default {
         if(window.innerWidth<834){
             this.mobile = true
         }
-        this.$axios.get(('guides/single?id='+this.$route.query.id)).then((res)=>{
+        this.$axios.get(('volunteers/single?id='+this.$route.query.id)).then((res)=>{
             this.guide = res?.data?.result?.guideDocument
             const qr = res?.data?.result?.qrcode
             const b64toBlob = (qr, sliceSize=512) => {
