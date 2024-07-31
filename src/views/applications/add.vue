@@ -1,203 +1,222 @@
 <template>
   <div class="wrapper pth">
     <form class="form" @submit.prevent="send">
-      <div class="form__group">
-        <div class="form__field form__field--select">
+      <div class="new-apl-g3">
+        <div class="new-apl-select">
           <label class="form__label" for="pin">PIN:</label>
-          <input
-            class="form__input"
+          <el-input
+            class="form__el-input"
             type="text"
             v-model="user.pin"
             id="pin"
             required
           />
         </div>
+
+        <div class="new-apl-select">
+          <label class="form__label" for="first_name">First Name:</label>
+          <el-input
+            class="form__el-input"
+            type="text"
+            v-model="user.first_name"
+            id="first_name"
+            required
+          />
+        </div>
+
+        <div class="new-apl-select">
+          <label class="form__label" for="sur_name">Surname:</label>
+          <el-input
+            class="form__el-input"
+            type="text"
+            v-model="user.sur_name"
+            id="sur_name"
+            required
+          />
+        </div>
       </div>
-      <div class="form__group">
-        <label class="form__label" for="first_name">First Name:</label>
-        <input
-          class="form__input"
-          type="text"
-          v-model="user.first_name"
-          id="first_name"
-          required
-        />
+      <div class="new-apl-g3">
+        <div class="new-apl-select">
+          <label class="form__label" for="middle_name">Middle Name:</label>
+          <el-input
+            class="form__el-input"
+            type="text"
+            v-model="user.middle_name"
+            id="middle_name"
+            required
+          />
+        </div>
+
+        <div class="new-apl-select">
+          <label class="form__label" for="address">Address:</label>
+          <el-input
+            class="form__el-input"
+            type="text"
+            v-model="user.address"
+            id="address"
+            required
+          />
+        </div>
+
+        <div class="new-apl-select">
+          <label class="form__label" for="tin">TIN:</label>
+          <el-input
+            class="form__el-input"
+            type="text"
+            v-model="user.tin"
+            id="tin"
+            required
+          />
+        </div>
       </div>
 
-      <div class="form__group">
-        <label class="form__label" for="sur_name">Surname:</label>
-        <input
-          class="form__input"
-          type="text"
-          v-model="user.sur_name"
-          id="sur_name"
-          required
-        />
-      </div>
+      <div class="new-apl-g3">
+        <div class="new-apl-select">
+          <label class="form__label" for="pport_num">Passport Number:</label>
+          <el-input
+            class="form__el-input"
+            type="text"
+            v-model="user.pport_num"
+            id="pport_num"
+            required
+          />
+        </div>
 
-      <div class="form__group">
-        <label class="form__label" for="middle_name">Middle Name:</label>
-        <input
-          class="form__input"
-          type="text"
-          v-model="user.middle_name"
-          id="middle_name"
-          required
-        />
-      </div>
+        <div class="new-apl-select">
+          <label class="form__label" for="email">Email:</label>
+          <el-input
+            class="form__el-input"
+            type="email"
+            v-model="user.email"
+            id="email"
+            required
+          />
+        </div>
 
-      <div class="form__group">
-        <label class="form__label" for="address">Address:</label>
-        <input
-          class="form__input"
-          type="text"
-          v-model="user.address"
-          id="address"
-          required
-        />
+        <div class="new-apl-select">
+          <label class="form__label" for="phone_number">Phone Number:</label>
+          <el-input
+            class="form__el-input"
+            type="tel"
+            v-model="user.phone_number"
+            id="phone_number"
+            required
+          />
+        </div>
       </div>
+      <div class="new-apl-g3">
+        <div class="new-apl-select">
+          <label for="">{{ $t('typeAppl') }}</label>
+          <el-select
+            v-model="applications.application_type"
+            class="m-2"
+            size="large"
+            placeholder="Iltimos tanlang"
+          >
+            <el-option
+              v-for="item in application_types"
+              :key="item.value"
+              :label="item.name?.[$i18n.locale]"
+              :value="item.value"
+            />
+          </el-select>
+        </div>
 
-      <div class="form__group">
-        <label class="form__label" for="tin">TIN:</label>
-        <input
-          class="form__input"
-          type="text"
-          v-model="user.tin"
-          id="tin"
-          required
-        />
+        <div class="new-apl-select">
+          <label class="form__label" for="university">University:</label>
+          <el-input
+            class="form__el-input"
+            type="text"
+            v-model="applications.university"
+            id="university"
+            required
+          />
+        </div>
+
+        <div class="new-apl-select">
+          <label class="form__label" for="major">Major:</label>
+          <el-input
+            class="form__el-input"
+            type="text"
+            v-model="applications.major"
+            id="major"
+            required
+          />
+        </div>
       </div>
+      <div class="new-apl-g3">
+        <div class="new-apl-select">
+          <label class="form__label" for="experience">Experience:</label>
+          <el-input
+            class="form__el-input"
+            type="text"
+            v-model="applications.experience"
+            id="experience"
+            required
+          />
+        </div>
 
-      <div class="form__group">
-        <label class="form__label" for="pport_num">Passport Number:</label>
-        <input
-          class="form__input"
-          type="text"
-          v-model="user.pport_num"
-          id="pport_num"
-          required
-        />
+        <div class="new-apl-select">
+          <label class="form__label" for="per_adr">Permanent Address:</label>
+          <el-input
+            class="form__el-input"
+            type="text"
+            v-model="applications.per_adr"
+            id="per_adr"
+            required
+          />
+        </div>
+
+        <div class="new-apl-select">
+          <label for="gender">{{ $t('gender') }}</label>
+          <el-select
+            v-model="user.gender"
+            class="m-2"
+            size="large"
+            placeholder="select gender"
+          >
+            <el-option
+              v-for="item in genders"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value"
+            />
+          </el-select>
+        </div>
       </div>
+      <div class="new-apl-g3">
+        <div class="new-apl-select">
+          <label class="form__label" for="birth_place">Birth Place:</label>
+          <el-input
+            class="form__el-input"
+            type="text"
+            v-model="user.birth_place"
+            id="birth_place"
+            required
+          />
+        </div>
 
-      <div class="form__group">
-        <label class="form__label" for="email">Email:</label>
-        <input
-          class="form__input"
-          type="email"
-          v-model="user.email"
-          id="email"
-          required
-        />
-      </div>
+        <div class="new-apl-select">
+          <label class="form__label" for="birth_date">Birth Date:</label>
+          <el-input
+            class="form__el-input"
+            type="date"
+            v-model="user.birth_date"
+            id="birth_date"
+            required
+          />
+        </div>
 
-      <div class="form__group">
-        <label class="form__label" for="phone_number">Phone Number:</label>
-        <input
-          class="form__input"
-          type="tel"
-          v-model="user.phone_number"
-          id="phone_number"
-          required
-        />
-      </div>
-
-      <div class="form__group">
-        <label class="form__label" for="application_type"
-          >Application Type:</label
-        >
-        <input
-          class="form__input"
-          type="text"
-          disabled
-          v-model="applications.application_type"
-          id="application_type"
-          required
-        />
-      </div>
-
-      <div class="form__group">
-        <label class="form__label" for="university">University:</label>
-        <input
-          class="form__input"
-          type="text"
-          v-model="applications.university"
-          id="university"
-          required
-        />
-      </div>
-
-      <div class="form__group">
-        <label class="form__label" for="major">Major:</label>
-        <input
-          class="form__input"
-          type="text"
-          v-model="applications.major"
-          id="major"
-          required
-        />
-      </div>
-
-      <div class="form__group">
-        <label class="form__label" for="experience">Experience:</label>
-        <input
-          class="form__input"
-          type="text"
-          v-model="applications.experience"
-          id="experience"
-          required
-        />
-      </div>
-
-      <div class="form__group">
-        <label class="form__label" for="per_adr">Permanent Address:</label>
-        <input
-          class="form__input"
-          type="text"
-          v-model="applications.per_adr"
-          id="per_adr"
-          required
-        />
-      </div>
-
-      <div class="form__group">
-        <label class="form__label" for="gd">Gender:</label>
-        <select class="form__select" v-model="user.gd" id="gd" required>
-          <option class="form__option" value="M">Male</option>
-          <option class="form__option" value="F">Female</option>
-        </select>
-      </div>
-
-      <div class="form__group">
-        <label class="form__label" for="birth_place">Birth Place:</label>
-        <input
-          class="form__input"
-          type="text"
-          v-model="user.birth_place"
-          id="birth_place"
-          required
-        />
-      </div>
-
-      <div class="form__group">
-        <label class="form__label" for="birth_date">Birth Date:</label>
-        <input
-          class="form__input"
-          type="date"
-          v-model="user.birth_date"
-          id="birth_date"
-          required
-        />
-      </div>
-
-      <div class="form__group">
-        <label class="form__label" for="badge_img">Badge Image:</label>
-        <input
-          class="form__input"
-          type="file"
-          @change="setFile($event, 'badge_img')"
-          id="badge_img"
-          required
-        />
+        <div class="new-apl-select">
+          <label class="form__label" for="badge_img">Badge Image:</label>
+          <input
+            class="form__el-input"
+            type="file"
+            @change="setFile($event, 'badge_img')"
+            id="badge_img"
+            required
+          />
+        </div>
       </div>
 
       <table class="form__table">
@@ -212,8 +231,7 @@
         <tbody class="form__tbody">
           <tr class="form__tr" v-for="(row, index) in rows" :key="index">
             <td class="form__td">
-              <div class="form__field form__field--select">
-                <label class="form__label" for=""></label>
+              <div class="form__field form__field--select m-2">
                 <el-select
                   v-model="row.languages"
                   class="form__el-select"
@@ -229,39 +247,40 @@
                 </el-select>
               </div>
             </td>
+
             <td class="form__td">
-              <select class="form__select" v-model="row.certType">
-                <option class="form__option" disabled value="">
-                  Certifikat turini tanlang
-                </option>
-                <option
-                  class="form__option"
+              <el-select
+                v-model="row.certType"
+                class="form__el-select"
+                placeholder="Iltimos tanlang"
+                size="large"
+              >
+                <el-option
                   v-for="cert in certificates"
                   :key="cert"
+                  :label="cert"
                   :value="cert"
-                >
-                  {{ cert }}
-                </option>
-              </select>
+                />
+              </el-select>
             </td>
             <td class="form__td">
-              <select class="form__select" v-model="row.certLevel">
-                <option class="form__option" disabled value="">
-                  Certifikat darajasi
-                </option>
-                <option
-                  class="form__option"
+              <el-select
+                v-model="row.certLevel"
+                class="form__el-select"
+                placeholder="Iltimos tanlang"
+                size="large"
+              >
+                <el-option
                   v-for="level in levels"
                   :key="level"
+                  :label="level"
                   :value="level"
-                >
-                  {{ level }}
-                </option>
-              </select>
+                />
+              </el-select>
             </td>
             <td class="form__td">
               <input
-                class="form__input"
+                class="form__el-input"
                 type="file"
                 @change="onFileChange($event, index)"
               />
@@ -277,17 +296,18 @@
           </tr>
         </tbody>
       </table>
-      <button
-        class="form__button form__button--add"
-        type="button"
-        @click="addRow"
-      >
-        +
-      </button>
 
-      <button class="form__button form__button--submit" type="submit">
-        Send Application
-      </button>
+      <div class="form__button--add">
+        <button type="button" @click="addRow" class="blue-filled-btn">
+          Add list
+        </button>
+      </div>
+      <div class="new-apl-block">
+        <button type="submit" class="blue-filled-btn">
+          {{ $t('sendAppl') }}
+        </button>
+     
+      </div>
     </form>
   </div>
 </template>
@@ -309,8 +329,12 @@ export default {
         phone_number: '+9987654567',
         birth_place: 'saxaxas',
         birth_date: 'asxxsaaxs',
-        gender: '',
+        gender: ['M', 'F'],
       },
+      genders: [
+        { label: 'Male', value: 'M' },
+        { label: 'Female', value: 'F' },
+      ],
       applications: {
         languages: [],
         application_type: 'translator',
@@ -1866,118 +1890,77 @@ export default {
   },
 }
 </script>
-
-<style>
-.form {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background-color: #f9f9f9;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.form__group {
-  margin-bottom: 20px;
-}
-
-.form__label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: 600;
-  color: #333;
-}
-
-.form__input,
-.form__select {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  box-sizing: border-box;
-}
-
-.form__input:focus,
-.form__select:focus {
-  outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
-
-.form__input[type="file"] {
-  padding: 0;
-}
-
-.form__button {
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  text-align: center;
-  margin: 5px;
-}
-
-.form__button--remove {
-  background-color: #dc3545;
-  color: white;
-}
-
-.form__button--remove:hover {
-  background-color: #c82333;
-}
-
-.form__button--add {
-  background-color: #28a745;
-  color: white;
-}
-
-.form__button--add:hover {
-  background-color: #218838;
-}
-
-.form__button--submit {
-  background-color: #007bff;
-  color: white;
-  width: 100%;
-}
-
-.form__button--submit:hover {
-  background-color: #0056b3;
-}
-
+<style scoped>
 .form__table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 20px;
+  margin: 20px 0;
 }
 
-.form__thead,
-.form__tbody {
-  border-bottom: 1px solid #ccc;
-  
+.form__thead {
+  background-color: #f4f4f4;
+}
+
+.form__tr {
+  border-bottom: 1px solid #ddd;
 }
 
 .form__th,
 .form__td {
-  padding: 10px;
+  padding: 10px 15px;
   text-align: left;
 }
 
 .form__th {
-  background-color: #007bff;
+  font-weight: bold;
+}
+
+.form__td {
+  vertical-align: middle;
+}
+
+.form__el-select {
+  width: 100%;
+}
+
+.form__el-input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.form__button {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.form__button--remove {
+  background-color: #ff4d4d;
+  border: none;
+  color: white;
+  border-radius: 4px;
+}
+
+.m-2 {
+  margin: 8px 0;
+}
+
+.form__button--add {
+  display: flex;
+  justify-content: end;
+  margin-top: 20px;
+}
+
+.form__button--add button {
+  background-color: #4caf50;
+  color: white;
+  width: 100px;
+}
+
+.form__button--submit {
+  display: block;
+  margin: 20px auto;
+  background-color: #008cba;
   color: white;
 }
-
-.form__tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-
-.form__td:last-child {
-  text-align: center;
-}
-
 </style>

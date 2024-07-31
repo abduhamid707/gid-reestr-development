@@ -4,7 +4,8 @@
             <div class="footer">
                 <div class="footer-blocks">
                 <div class="footer-block flogo">
-                        <img src="@/assets/icons/logo.svg" alt="">
+                                  <img src="@/assets/logo.png" alt="" class="logo-img" />
+
                         <p>{{$t('moct')}}</p>
                 </div>
                 <div class="footer-block-ct">
@@ -66,5 +67,8 @@ export default {
 </script>
 
 <style>
-
+.logo-img {
+  width: 150px ;
+  height: auto !important;
+}
 </style>
