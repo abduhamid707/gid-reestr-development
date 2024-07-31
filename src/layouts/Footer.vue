@@ -16,9 +16,9 @@
                                     <span><Icons icon="mail" color="#7B8189" size="middle"/></span>
                                     <p>info@motach.uz</p>
                                 </a>
-                                <a href="tel:+998 55 502 33 75" class="footer-link">
+                                <a href="tel:+998 95 835 55 05" class="footer-link">
                                     <span><Icons icon="phone" color="#7B8189" size="middle"/></span>
-                                    <p>+998 55 502 33 75</p>
+                                    <p>+998 95 835 55 05</p>
                                 </a>
                                 <div class="footer-link">
                                     <span><Icons icon="location" color="#7B8189" size="middle"/></span>

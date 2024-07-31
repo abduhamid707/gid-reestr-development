@@ -14,7 +14,7 @@ const en = {
   midText: 'Normal',
   smallText: 'Small',
   log:'Login',
-  moct: "Ministry of Culture and Tourism of the Republic of Uzbekistan registry of Volontyorss",
+  moct: "CULTURAL VOLUNTEERS Public association",
   FIO: 'Full Name',
   certNumber: 'Certificate (Badge) Number',
   cert: 'Certificate',

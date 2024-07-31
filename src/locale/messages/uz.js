@@ -14,7 +14,7 @@ const uz = {
   smallText: 'Kichkina',
   coloredScheme: 'Rangli sxema',
   log:'Tizimga kirish',
-  moct: 'O‘zbekiston Respublikasi Madaniyat va turizm vazirligi Volontyors reyestri',
+  moct: 'MADANIYAT KO’NGILLILARI Jamoat birlashmasi',
   FIO: 'F.I.Sh',
   certNumber: 'Sertifikat raqami',
   cert: 'Sertifikat',
