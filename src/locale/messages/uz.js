@@ -64,7 +64,7 @@ const uz = {
   secondName: 'Familiyasi',
   firstName: 'Ismi',
   menu: 'Menyu',
-  copy:'Barcha huquqlar himoyalangan',
+  copy:'Barcha huquqlar himoyalangan.',
   guide_type1: 'gid-tarjimon',
   guide_type2: 'ekskursiya yetakchisi',
   guide_type3: 'yo‘riqchi-yo‘l boshlovchi',
