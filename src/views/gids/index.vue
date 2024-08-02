@@ -10,14 +10,17 @@
                     <div class="gt-stats">
                         <div class="gt-stat">
                             <label for="">{{$t('activeCert')}}</label>
+                             <p>1</p>
                             <p>{{table?.activeCount}}</p>
                         </div>
                         <div class="gt-stat">
                             <label for="">{{$t('expCert')}}</label>
+                            <p>0</p>
                             <p>{{table?.expiredCount}}</p>
                         </div>
                         <div class="gt-stat">
                             <label for="">{{$t('cancelCert')}}</label>
+                            <p>0</p>
                             <p>{{table?.canceledCount}}</p>
                         </div>
                     </div>

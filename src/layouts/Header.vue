@@ -274,7 +274,7 @@ export default {
   methods: {
     async login() {
       await window.open(
-        'https://sso.egov.uz/sso/oauth/Authorization.do?response_type=one_code&client_id=gidlar_reestri&redirect_uri=http://test.gidlar.uz/uz%2Fapplications&scope=gidlar_reestri&state=IDPW',
+        'https://sso.egov.uz/sso/oauth/Authorization.do?response_type=one_code&client_id=culturevolunteers_uz&redirect_uri=https://culturevolunteers.uz/uz%2Fapplications&scope=culturevolunteers_uz&state=IDPW',
         '_self'
       )
     },

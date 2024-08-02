@@ -120,6 +120,8 @@ const ru = {
   otherWorkOrStudy: '',
   volunteerExperience: '',
   telegramUsername: '',
-  selectGender:"Выберите пол"
+  selectGender:"Выберите пол",
+  langs1:"Ingliz tili,Rus tili",
+  regions1:"Samarqand viloyati"
 };
 export default ru;

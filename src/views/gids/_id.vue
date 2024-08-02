@@ -24,7 +24,9 @@
                                     <h4><span v-if="guide?.category==0">{{no_category?.name[$i18n.locale]}}</span><span v-else-if="guide?.category==1 || guide?.category==2">{{guide?.category}}-{{num_category?.name[$i18n.locale]}}</span><span v-else-if="guide?.category==10">{{best_category?.name[$i18n.locale]}}</span> <span v-if="guide?.guide_type == 'excursion_guide'">{{ $t('guide_type2') }}</span><span v-else-if="guide?.guide_type == 'mountain_guide'">{{ $t('guide_type3') }}</span><span v-else>{{ $t('guide_type1') }}</span></h4>
                                     <div class="gids-sg-certfication">
                                         <span>{{$t('statusbeyj')}}:</span>
-                                        <p :class="guide?.activity">{{statusCheck(guide?.activity)}}</p>
+                                        <span>{{$t('activity')}}</span>
+
+                                      <!--<p :class="guide?.activity">{{statusCheck(guide?.activity)}}</p> -->  
                                     </div>
                                 </div>
                                 <div class="gids-sg-prinfos">
@@ -50,11 +52,13 @@
                                     </div>
                                     <div class="gids-sg-prinfo">
                                         <span>{{$t('lang')}}:</span>
-                                        <p v-for="el,index in guide?.languages" :key="index">{{ langs[el-1]?.name?.[$i18n.locale] }},</p>
+                                        <p>{{ $t('langs1')}}</p>
+                                      <!--  <p v-for="el,index in guide?.languages" :key="index">{{ langs[el-1]?.name?.[$i18n.locale] }},</p> --> 
                                     </div>
                                     <div class="gids-sg-prinfo" style="row-gap:10px;">
                                         <span>{{$t('territory')}}:</span>
-                                        <p v-for="el,index in guide?.regions" :key="index">{{ regions[el-1]?.name?.[$i18n.locale] }},</p>
+                                        <span>{{$t('regions1')}}</span>
+                                      <!-- <p v-for="el,index in guide?.regions" :key="index">{{ regions[el-1]?.name?.[$i18n.locale] }},</p> --> 
                                     </div>
                                 </div>
                                 <!-- <div class="qr-code">
@@ -69,9 +73,9 @@
                     <div v-else class="gids-sg-uinfos"> {{$t('downloading')}}...</div>
                     <div v-if="guide?.work_phone_number || guide?.email" class="gids-sg-uinfos ne">
                         <div class="gids-sg-cb">
-                            <div v-if="guide?.work_phone_number" class="gids-sg-ne">
+                            <div v-if="guide?.user?.phone_number" class="gids-sg-ne">
                                 <span>{{$t('phone')}}:</span>
-                                <a :href="'tel:'+guide?.work_phone_number">{{guide?.work_phone_number}}</a>
+                                <a :href="'tel:'+guide?.user?.phone_number">{{guide?.user?.phone_number}}</a> 
                             </div>
                             <div v-if="guide?.user?.email" class="gids-sg-ne">
                                 <span>{{$t('mail')}}:</span>

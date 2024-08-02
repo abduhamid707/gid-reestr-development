@@ -52,6 +52,6 @@ export default {
   top: 0;
 }
 .preloader path {
-    transition: 2s;
+    transition: 0ms;
 }
 </style>

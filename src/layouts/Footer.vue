@@ -14,7 +14,7 @@
                             <div class="footer-links">
                                 <a href="mailto:info@motach.uz" class="footer-link">
                                     <span><Icons icon="mail" color="#7B8189" size="middle"/></span>
-                                    <p>info@motach.uz</p>
+                                    <p>info@culturevolunteers.uz</p>
                                 </a>
                                 <a href="tel:+998 95 835 55 05" class="footer-link">
                                     <span><Icons icon="phone" color="#7B8189" size="middle"/></span>
@@ -48,7 +48,7 @@
                 </div>
                 <div class="hr"></div>
                 <div class="footer-cf">
-                    <p>www.gidlar.uz <span>&copy;</span> 2023</p>
+                    <p>www.culturevolunteers.uz <span>&copy;</span> 2024</p>
                     <p>{{$t('copy')}}</p>
                 </div>
             </div>
