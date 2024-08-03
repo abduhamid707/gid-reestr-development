@@ -1,5 +1,10 @@
 <template>
   <div class="wrapper pth">
+        <div class="applications" v-if="preloading">
+      <div class="new-apl">
+        <h3>{{ $t('appl') }}</h3>
+        </div>
+        </div>
     <form class="form" @submit.prevent="send">
       <div class="new-apl-g3">
         <div class="new-apl-select">
