@@ -329,7 +329,6 @@ export default {
       user: {
       tin:this.user_id
       },
-      gender: this.user.gd,
       genders: [
         { label: 'Male', value: 'M' },
         { label: 'Female', value: 'F' },
@@ -1730,7 +1729,7 @@ export default {
       formData.append('phone_number', this.user.phone_number)
       formData.append('birth_place', this.user.birth_place)
       formData.append('birth_date', this.user.birth_date)
-      formData.append('gd', this.user.gd)
+      formData.append('gd', this.user.gender)
 
       // Append application details
       formData.append('application_type', this.applications.application_type)
