@@ -42,12 +42,12 @@
       </div>
       <div class="new-apl-g3">
         <div class="new-apl-select">
-          <label class="form__label" for="middle_name">Middle Name:</label>
+          <label class="form__label" for="mid_name">Middle Name:</label>
           <el-input
             class="form__el-input"
             type="text"
-            v-model="user.middle_name"
-            id="middle_name"
+            v-model="user.mid_name"
+            id="mid_name"
             required
           />
         </div>
@@ -172,22 +172,22 @@
           />
         </div>
 
-        <div class="new-apl-select">
-          <label for="gender">{{ $t('gender') }}</label>
-          <el-select
-            v-model="user.gender"
-            class="m-2"
-            size="large"
-            placeholder="select gender"
-          >
-            <el-option
-              v-for="item in genders"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-            />
-          </el-select>
-        </div>
+      <div class="new-apl-select">
+    <label for="gender">{{ $t('gender') }}</label>
+    <el-select
+      v-model="user.gender"
+      class="m-2"
+      size="large"
+      placeholder="select gender"
+    >
+      <el-option
+        v-for="item in genders"
+        :key="item.value"
+        :label="item.label"
+        :value="item.value"
+      />
+    </el-select>
+  </div>
       </div>
       <div class="new-apl-g3">
         <div class="new-apl-select">
@@ -323,6 +323,7 @@ export default {
   data() {
     return {
       user: {},
+      gender: this.user.gd,
       genders: [
         { label: 'Male', value: 'M' },
         { label: 'Female', value: 'F' },
@@ -1715,7 +1716,7 @@ export default {
       formData.append('pin', this.user.pin)
       formData.append('first_name', this.user.first_name)
       formData.append('sur_name', this.user.sur_name)
-      formData.append('middle_name', this.user.middle_name)
+      formData.append('middle_name', this.user.mid_name)
       formData.append('address', this.user.address)
       formData.append('tin', this.user.tin)
       formData.append('pport_num', this.user.pport_num)
@@ -1723,7 +1724,7 @@ export default {
       formData.append('phone_number', this.user.phone_number)
       formData.append('birth_place', this.user.birth_place)
       formData.append('birth_date', this.user.birth_date)
-      formData.append('gd', this.user.gender)
+      formData.append('gd', this.user.gd)
 
       // Append application details
       formData.append('application_type', this.applications.application_type)
