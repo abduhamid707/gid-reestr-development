@@ -1,10 +1,10 @@
 <template>
   <div class="wrapper pth">
-        <div class="applications" v-if="preloading">
+    <div class="applications" v-if="preloading">
       <div class="new-apl">
-        <h3>{{ $t('appl') }}</h3> 
-        </div>
-        </div>
+        <h3>{{ $t('appl') }}</h3>
+      </div>
+    </div>
     <form class="form" @submit.prevent="send">
       <div class="new-apl-g3">
         <div class="new-apl-select">
@@ -14,6 +14,7 @@
             type="text"
             v-model="user.pin"
             id="pin"
+            disabled
             required
           />
         </div>
@@ -25,6 +26,7 @@
             type="text"
             v-model="user.first_name"
             id="first_name"
+            disabled
             required
           />
         </div>
@@ -36,6 +38,7 @@
             type="text"
             v-model="user.sur_name"
             id="sur_name"
+            disabled
             required
           />
         </div>
@@ -45,6 +48,7 @@
           <label class="form__label" for="mid_name">Middle Name:</label>
           <el-input
             class="form__el-input"
+            disabled
             type="text"
             v-model="user.mid_name"
             id="mid_name"
@@ -172,22 +176,22 @@
           />
         </div>
 
-      <div class="new-apl-select">
-    <label for="gender">{{ $t('gender') }}</label>
-    <el-select
-      v-model="user.gender"
-      class="m-2"
-      size="large"
-      placeholder="select gender"
-    >
-      <el-option
-        v-for="item in genders"
-        :key="item.value"
-        :label="item.label"
-        :value="item.value"
-      />
-    </el-select>
-  </div>
+        <div class="new-apl-select">
+          <label for="gender">{{ $t('gender') }}</label>
+          <el-select
+            v-model="user.gender"
+            class="m-2"
+            size="large"
+            placeholder="select gender"
+          >
+            <el-option
+              v-for="item in genders"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value"
+            />
+          </el-select>
+        </div>
       </div>
       <div class="new-apl-g3">
         <div class="new-apl-select">
@@ -311,7 +315,6 @@
         <button type="submit" class="blue-filled-btn">
           {{ $t('sendAppl') }}
         </button>
-     
       </div>
     </form>
   </div>
@@ -1878,10 +1881,13 @@ export default {
   },
   async mounted() {
     this.preloading = false
-    console.log('localStorage.getItem(\'user_id\') :', localStorage.getItem('user_id'));
+    console.log(
+      "localStorage.getItem('user_id') :",
+      localStorage.getItem('user_id')
+    )
     if (localStorage.getItem('user_id')) {
       this.user = this.$store?.user
-      console.log('this.user :', this.user);
+      console.log('this.user :', this.user)
     } else {
     }
     this.preloading = true
