@@ -74,6 +74,7 @@
             type="text"
             v-model="user.tin"
             id="tin"
+            disabled
             required
           />
         </div>
@@ -325,7 +326,9 @@ import Icons from '@/components/icons.vue'
 export default {
   data() {
     return {
-      user: {},
+      user: {
+      tin:this.user_id
+      },
       gender: this.user.gd,
       genders: [
         { label: 'Male', value: 'M' },
@@ -1721,7 +1724,7 @@ export default {
       formData.append('sur_name', this.user.sur_name)
       formData.append('middle_name', this.user.mid_name)
       formData.append('address', this.user.address)
-      formData.append('tin', this.user.tin)
+      formData.append('tin', this.user.user_id)
       formData.append('pport_num', this.user.pport_num)
       formData.append('email', this.user.email)
       formData.append('phone_number', this.user.phone_number)
