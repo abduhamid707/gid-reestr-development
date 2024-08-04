@@ -2,7 +2,7 @@
   <div class="wrapper pth">
         <div class="applications" v-if="preloading">
       <div class="new-apl">
-        <h3>{{ $t('appl') }}</h3>
+        <h3>{{ $t('appl') }}</h3> 
         </div>
         </div>
     <form class="form" @submit.prevent="send">
@@ -322,20 +322,7 @@ import Icons from '@/components/icons.vue'
 export default {
   data() {
     return {
-      user: {
-        pin: 'ss',
-        first_name: 'ss',
-        sur_name: 'ss',
-        middle_name: 'ss',
-        address: 'ss',
-        tin: '1232',
-        pport_num: '2wsa',
-        email: 'aasx@gmail.com',
-        phone_number: '+9987654567',
-        birth_place: 'saxaxas',
-        birth_date: 'asxxsaaxs',
-        gender: ['M', 'F'],
-      },
+      user: {},
       genders: [
         { label: 'Male', value: 'M' },
         { label: 'Female', value: 'F' },
@@ -1890,7 +1877,12 @@ export default {
   },
   async mounted() {
     this.preloading = false
-
+    console.log('localStorage.getItem(\'user_id\') :', localStorage.getItem('user_id'));
+    if (localStorage.getItem('user_id')) {
+      this.user = this.$store?.user
+      console.log('this.user :', this.user);
+    } else {
+    }
     this.preloading = true
   },
 }
