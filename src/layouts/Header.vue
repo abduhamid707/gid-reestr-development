@@ -26,12 +26,19 @@
               alt=""
             />
             <div v-if="user?.first_name && openmodal" class="openmodal">
-              <router-link :to="'/' + this.$i18n.local + '/profile'">{{
+            
+              <router-link :to="'/' + this.$i18n.local + '/profile'">
+              {{
                 $t('myProfile')
-              }}</router-link>
-              <router-link :to="'/' + this.$i18n.locale + '/applications'">{{
+              }}
+              </router-link>
+
+              <router-link :to="'/' + this.$i18n.locale + '/applications'">
+              {{
                 $t('myAppl')
-              }}</router-link>
+              }}
+              </router-link>
+
               <button @click="logout">{{ $t('logout') }}</button>
             </div>
           </div>

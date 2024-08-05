@@ -74,7 +74,6 @@
             type="text"
             v-model="user.tin"
             id="tin"
-            disabled
             required
           />
         </div>
@@ -88,6 +87,7 @@
             type="text"
             v-model="user.pport_num"
             id="pport_num"
+            disabled
             required
           />
         </div>
