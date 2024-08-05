@@ -122,7 +122,27 @@ const uz = {
   telegramUsername: 'Telegram user',
   selectGender:"Jinsni tanlang",
   langs1:"Ingliz tili,Rus tili",
-  regions1:"Samarqand viloyati"
+  regions1: "Samarqand viloyati",
+  "PIN": "PIN:",
+  "firstName": "Ism:",
+  "surname": "Familiya:",
+  "middleName": "Otasining ismi:",
+  "address": "Manzil:",
+  "TIN": "STIR:",
+  "passportNumber": "Pasport raqami:",
+  "email": "Elektron pochta:",
+  "phoneNumber": "Telefon raqami:",
+  "pleaseSelect": "Iltimos tanlang",
+  "university": "Universitet:",
+  "major": "Mutaxassislik:",
+  "experience": "Tajriba:",
+  "permanentAddress": "Doimiy manzil:",
+  "birthPlace": "Tug'ilgan joy:",
+  "birthDate": "Tug'ilgan sana:",
+  "badgeImage": "Nishon rasmi:",
+  "selectCertificateType": "Certifikat turini tanlang",
+  "certificateLevel": "Certifikat darajasi",
+  "certificateFile": "Certifikat fayli"
 };
 
 export default uz;

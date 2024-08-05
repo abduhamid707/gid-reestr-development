@@ -8,7 +8,7 @@
     <form class="form" @submit.prevent="send">
       <div class="new-apl-g3">
         <div class="new-apl-select">
-          <label class="form__label" for="pin">PIN:</label>
+          <label class="form__label" for="pin">{{ $t('PIN') }}</label>
           <el-input
             class="form__el-input"
             type="text"
@@ -20,7 +20,7 @@
         </div>
 
         <div class="new-apl-select">
-          <label class="form__label" for="first_name">First Name:</label>
+          <label class="form__label" for="first_name">{{ $t('firstName') }}</label>
           <el-input
             class="form__el-input"
             type="text"
@@ -32,7 +32,7 @@
         </div>
 
         <div class="new-apl-select">
-          <label class="form__label" for="sur_name">Surname:</label>
+          <label class="form__label" for="sur_name">{{ $t('surname') }}</label>
           <el-input
             class="form__el-input"
             type="text"
@@ -45,7 +45,7 @@
       </div>
       <div class="new-apl-g3">
         <div class="new-apl-select">
-          <label class="form__label" for="mid_name">Middle Name:</label>
+          <label class="form__label" for="mid_name">{{ $t('middleName') }}</label>
           <el-input
             class="form__el-input"
             disabled
@@ -57,7 +57,7 @@
         </div>
 
         <div class="new-apl-select">
-          <label class="form__label" for="address">Address:</label>
+          <label class="form__label" for="address">{{ $t('address') }}</label>
           <el-input
             class="form__el-input"
             type="text"
@@ -68,7 +68,7 @@
         </div>
 
         <div class="new-apl-select">
-          <label class="form__label" for="tin">TIN:</label>
+          <label class="form__label" for="tin">{{ $t('TIN') }}</label>
           <el-input
             class="form__el-input"
             type="text"
@@ -81,7 +81,7 @@
 
       <div class="new-apl-g3">
         <div class="new-apl-select">
-          <label class="form__label" for="pport_num">Passport Number:</label>
+          <label class="form__label" for="pport_num">{{ $t('passportNumber') }}</label>
           <el-input
             class="form__el-input"
             type="text"
@@ -93,7 +93,7 @@
         </div>
 
         <div class="new-apl-select">
-          <label class="form__label" for="email">Email:</label>
+          <label class="form__label" for="email">{{ $t('email') }}</label>
           <el-input
             class="form__el-input"
             type="email"
@@ -104,7 +104,7 @@
         </div>
 
         <div class="new-apl-select">
-          <label class="form__label" for="phone_number">Phone Number:</label>
+          <label class="form__label" for="phone_number">{{ $t('phoneNumber') }}</label>
           <el-input
             class="form__el-input"
             type="tel"
@@ -121,7 +121,7 @@
             v-model="applications.application_type"
             class="m-2"
             size="large"
-            placeholder="Iltimos tanlang"
+            :placeholder="$t('pleaseSelect')"
           >
             <el-option
               v-for="item in application_types"
@@ -133,7 +133,7 @@
         </div>
 
         <div class="new-apl-select">
-          <label class="form__label" for="university">University:</label>
+          <label class="form__label" for="university">{{ $t('university') }}</label>
           <el-input
             class="form__el-input"
             type="text"
@@ -144,7 +144,7 @@
         </div>
 
         <div class="new-apl-select">
-          <label class="form__label" for="major">Major:</label>
+          <label class="form__label" for="major">{{ $t('major') }}</label>
           <el-input
             class="form__el-input"
             type="text"
@@ -156,7 +156,7 @@
       </div>
       <div class="new-apl-g3">
         <div class="new-apl-select">
-          <label class="form__label" for="experience">Experience:</label>
+          <label class="form__label" for="experience">{{ $t('experience') }}</label>
           <el-input
             class="form__el-input"
             type="text"
@@ -167,7 +167,7 @@
         </div>
 
         <div class="new-apl-select">
-          <label class="form__label" for="per_adr">Permanent Address:</label>
+          <label class="form__label" for="per_adr">{{ $t('permanentAddress') }}</label>
           <el-input
             class="form__el-input"
             type="text"
@@ -183,7 +183,7 @@
             v-model="user.gender"
             class="m-2"
             size="large"
-            placeholder="select gender"
+            :placeholder="$t('selectGender')"
           >
             <el-option
               v-for="item in genders"
@@ -196,7 +196,7 @@
       </div>
       <div class="new-apl-g3">
         <div class="new-apl-select">
-          <label class="form__label" for="birth_place">Birth Place:</label>
+          <label class="form__label" for="birth_place">{{ $t('birthPlace') }}</label>
           <el-input
             class="form__el-input"
             type="text"
@@ -207,7 +207,7 @@
         </div>
 
         <div class="new-apl-select">
-          <label class="form__label" for="birth_date">Birth Date:</label>
+          <label class="form__label" for="birth_date">{{ $t('birthDate') }}</label>
           <el-input
             class="form__el-input"
             type="date"
@@ -218,7 +218,7 @@
         </div>
 
         <div class="new-apl-select">
-          <label class="form__label" for="badge_img">Badge Image:</label>
+          <label class="form__label" for="badge_img">{{ $t('badgeImage') }}</label>
           <input
             class="form__el-input"
             type="file"
@@ -233,9 +233,9 @@
         <thead class="form__thead">
           <tr class="form__tr">
             <th class="form__th">{{ $t('langs') }}</th>
-            <th class="form__th">Certifikat turini tanlang</th>
-            <th class="form__th">Certifikat darajasi</th>
-            <th class="form__th">Certifikat fayli</th>
+            <th class="form__th">{{ $t('selectCertificateType') }}</th>
+            <th class="form__th">{{ $t('certificateLevel') }}</th>
+            <th class="form__th">{{ $t('certificateFile') }}</th>
           </tr>
         </thead>
         <tbody class="form__tbody">
@@ -245,7 +245,7 @@
                 <el-select
                   v-model="row.languages"
                   class="form__el-select"
-                  placeholder="Iltimos tanlang"
+                  :placeholder="$t('pleaseSelect')"
                   size="large"
                 >
                   <el-option
@@ -262,7 +262,7 @@
               <el-select
                 v-model="row.certType"
                 class="form__el-select"
-                placeholder="Iltimos tanlang"
+                :placeholder="$t('pleaseSelect')"
                 size="large"
               >
                 <el-option
@@ -277,7 +277,7 @@
               <el-select
                 v-model="row.certLevel"
                 class="form__el-select"
-                placeholder="Iltimos tanlang"
+                :placeholder="$t('pleaseSelect')"
                 size="large"
               >
                 <el-option
@@ -336,12 +336,12 @@ export default {
       applications: {
         languages: [],
         application_type: 'translator',
-        university: 'asxasxsa',
-        major: 'xaxsaxsa',
-        experience: '21sa',
+        university: '',
+        major: '',
+        experience: '',
         langcerlist: [],
         badge_img: null,
-        per_adr: 'qwsax',
+        per_adr: '',
       },
       rows: [{ certType: '', certLevel: '', languages: '' }],
       langs: [
