@@ -1797,9 +1797,7 @@ export default {
           console.log('res :', res)
           if (res) {
             this.$message.success(this.$t('succAppl'))
-            setTimeout(() => {
-              this.$router.push('/' + this.$i18n.locale + '/applications')
-            }, 1500)
+        
           }
         })
         .catch((err) => {
