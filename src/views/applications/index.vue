@@ -303,26 +303,32 @@ export default {
     },
   },
   async mounted() {
-await this.$axios.get('applications', {
-    params: {
-        user_id: 1
+    // localStorage'dan user_id ni oling
+    const user_id = localStorage.getItem('user_id')
+    if (user_id) {
+      await this.$axios
+        .get('applications', {
+          params: {
+            user_id: user_id,
+          },
+        })
+        .then((res) => {
+          if (res && res.data) {
+            this.applications = res?.data?.result?.applications
+            console.log('this.applications :', this.applications)
+            this.applications.forEach((el) => {
+              if (el?.status === 'checking' || el?.status === 'new') {
+                this.new_application = false
+                this.active_applications.push(el)
+              } else {
+                this.deactive_applications.push(el)
+              }
+            })
+          }
+        })
+    } else {
+      console.error('user_id is not found in localStorage')
     }
-}).then((res) => {
-    if (res && res.data) {
-        this.applications = res?.data?.result?.applications;
-        console.log('this.applications :', this.applications);
-        this.applications.forEach((el) => {
-            if (el?.status == 'checking' || el?.status == 'new') {
-                this.new_application = false;
-                this.active_applications.push(el);
-            } else {
-                this.deactive_applications.push(el);
-            }
-        });
-    }
-});
-
-
   },
 }
 </script>

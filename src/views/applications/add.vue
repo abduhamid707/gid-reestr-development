@@ -20,7 +20,9 @@
         </div>
 
         <div class="new-apl-select">
-          <label class="form__label" for="first_name">{{ $t('firstName') }}</label>
+          <label class="form__label" for="first_name">{{
+            $t('firstName')
+          }}</label>
           <el-input
             class="form__el-input"
             type="text"
@@ -45,7 +47,9 @@
       </div>
       <div class="new-apl-g3">
         <div class="new-apl-select">
-          <label class="form__label" for="mid_name">{{ $t('middleName') }}</label>
+          <label class="form__label" for="mid_name">{{
+            $t('middleName')
+          }}</label>
           <el-input
             class="form__el-input"
             disabled
@@ -81,7 +85,9 @@
 
       <div class="new-apl-g3">
         <div class="new-apl-select">
-          <label class="form__label" for="pport_num">{{ $t('passportNumber') }}</label>
+          <label class="form__label" for="pport_num">{{
+            $t('passportNumber')
+          }}</label>
           <el-input
             class="form__el-input"
             type="text"
@@ -104,7 +110,9 @@
         </div>
 
         <div class="new-apl-select">
-          <label class="form__label" for="phone_number">{{ $t('phoneNumber') }}</label>
+          <label class="form__label" for="phone_number">{{
+            $t('phoneNumber')
+          }}</label>
           <el-input
             class="form__el-input"
             type="tel"
@@ -133,7 +141,9 @@
         </div>
 
         <div class="new-apl-select">
-          <label class="form__label" for="university">{{ $t('university') }}</label>
+          <label class="form__label" for="university">{{
+            $t('university')
+          }}</label>
           <el-input
             class="form__el-input"
             type="text"
@@ -156,7 +166,9 @@
       </div>
       <div class="new-apl-g3">
         <div class="new-apl-select">
-          <label class="form__label" for="experience">{{ $t('experience') }}</label>
+          <label class="form__label" for="experience">{{
+            $t('experience')
+          }}</label>
           <el-input
             class="form__el-input"
             type="text"
@@ -167,7 +179,9 @@
         </div>
 
         <div class="new-apl-select">
-          <label class="form__label" for="per_adr">{{ $t('permanentAddress') }}</label>
+          <label class="form__label" for="per_adr">{{
+            $t('permanentAddress')
+          }}</label>
           <el-input
             class="form__el-input"
             type="text"
@@ -196,7 +210,9 @@
       </div>
       <div class="new-apl-g3">
         <div class="new-apl-select">
-          <label class="form__label" for="birth_place">{{ $t('birthPlace') }}</label>
+          <label class="form__label" for="birth_place">{{
+            $t('birthPlace')
+          }}</label>
           <el-input
             class="form__el-input"
             type="text"
@@ -207,7 +223,9 @@
         </div>
 
         <div class="new-apl-select">
-          <label class="form__label" for="birth_date">{{ $t('birthDate') }}</label>
+          <label class="form__label" for="birth_date">{{
+            $t('birthDate')
+          }}</label>
           <el-input
             class="form__el-input"
             type="date"
@@ -218,7 +236,9 @@
         </div>
 
         <div class="new-apl-select">
-          <label class="form__label" for="badge_img">{{ $t('badgeImage') }}</label>
+          <label class="form__label" for="badge_img">{{
+            $t('badgeImage')
+          }}</label>
           <input
             class="form__el-input"
             type="file"
@@ -327,7 +347,7 @@ export default {
   data() {
     return {
       user: {
-      tin:this.user_id
+        tin: this.user_id,
       },
       genders: [
         { label: 'Male', value: 'M' },
@@ -1759,7 +1779,8 @@ export default {
         }
       })
       // Append user ID (if available)
-      this.user.user_id = 1
+      const user_id = localStorage.getItem('user_id')
+      this.user.user_id = user_id
       formData.append('user_id', this.user.user_id)
 
       function logFormData(formData) {
