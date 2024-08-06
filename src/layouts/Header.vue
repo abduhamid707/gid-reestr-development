@@ -27,7 +27,7 @@
             />
             <div v-if="user?.first_name && openmodal" class="openmodal">
             
-              <router-link :to="'/' + this.$i18n.local + '/applications'">
+              <router-link :to="'/' + this.$i18n.local + '/profile'">
               {{
                 $t('myProfile')
               }}
