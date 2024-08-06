@@ -1737,6 +1737,8 @@ export default {
       }
     },
     send() {
+      const user_id = localStorage.getItem('user_id')
+
       const formData = new FormData()
       formData.append('pin', this.user.pin)
       formData.append('first_name', this.user.first_name)
@@ -1750,13 +1752,13 @@ export default {
       formData.append('birth_place', this.user.birth_place)
       formData.append('birth_date', this.user.birth_date)
       formData.append('gd', this.user.gender)
-
       // Append application details
       formData.append('application_type', this.applications.application_type)
       formData.append('university', this.applications.university)
       formData.append('major', this.applications.major)
       formData.append('experience', this.applications.experience)
       formData.append('per_adr', this.applications.per_adr)
+      formData.append('user_id', user_id)
 
       // Append language certificates
       this.rows.forEach((row) => {
@@ -1779,9 +1781,6 @@ export default {
         }
       })
       // Append user ID (if available)
-      const user_id = localStorage.getItem('user_id')
-      this.user.user_id = user_id
-      formData.append('user_id', this.user.user_id)
 
       function logFormData(formData) {
         for (let pair of formData.entries()) {
@@ -1908,7 +1907,7 @@ export default {
       "localStorage.getItem('user_id') :",
       localStorage.getItem('user_id')
     )
-    if (localStorage.getItem('user_id')) {
+    if (localStorage.getItem('user_id')) { 
       this.user = this.$store?.user
       console.log('this.user :', this.user)
     } else {
