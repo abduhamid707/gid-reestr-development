@@ -1797,7 +1797,7 @@ export default {
           console.log('res :', res)
           if (res) {
             this.$message.success(this.$t('succAppl'))
-        
+            this.$router.push('/' + $i18n.locale + '/applications')
           }
         })
         .catch((err) => {
@@ -1905,7 +1905,7 @@ export default {
       "localStorage.getItem('user_id') :",
       localStorage.getItem('user_id')
     )
-    if (localStorage.getItem('user_id')) { 
+    if (localStorage.getItem('user_id')) {
       this.user = this.$store?.user
       console.log('this.user :', this.user)
     } else {
